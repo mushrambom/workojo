@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="form-header">{% block title %}Track your Macros of current day{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="body">
+<form method="post">
+  {{ form.csrf_token }}
+{{ form.protein.label }}<br>{{ form.protein }}
+  <br>
+  <br>
+  {{ form.carbs.label }}<br>{{form.carbs}}
+  <br>
+  <br>
+  {{ form.fats.label }}<br>{{form.fats}}
+  <br>
+  <br> 
+  <input class="submit-btn" type="submit" value="Save">
+</form>
+</div>
+{% endblock %}

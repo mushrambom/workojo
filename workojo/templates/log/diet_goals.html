@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="form-header">{% block title %}Establish your daily macro goals{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="body">
+<form method="post">
+  {{ form.csrf_token }}
+  {{ form.daily_protein.label }}<br>{{ form.daily_protein }}
+  <br>
+  <br>
+  {{ form.daily_carbs.label }}<br>{{form.daily_carbs}}
+  <br>
+  <br>
+  {{ form.daily_fats.label }}<br>{{form.daily_fats}}
+  <br>
+  <br> 
+  <input class="submit-btn" type="submit" value="Save">
+</form>
+</div>
+{% endblock %}

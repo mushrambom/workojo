@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="form-header">{% block title %}Create Workout{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="body">
+  <form method="post">
+    {{ form.csrf_token }}
+    {{ form.tag.label }}  {{ form.tag}}
+    <input class="submit-btn" type="submit" value="Save">
+  </form>
+  <p>
+    A Description is necessary and gonna be used as title for each workout on your main page. Please, fill 
+    the field.
+  </p>
+  <p>
+     Each 'workout', as we named, represents a training day.
+     After this page you'll be able to add exercises to the newly created workout.
+  </p>
+</div>
+{% endblock %}

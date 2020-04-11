@@ -1,0 +1,134 @@
+* {margin: 0; padding: 0; -webkit-padding-start: 0;}
+h4 {margin: 15px 0px 10px 0px;}
+nav {
+    font-family: 'Gotu', sans-serif;
+    display: flex;
+    background-color: #fc766aff;
+    color: white;
+    padding: 10px;
+}
+ul {
+    font-size: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+li {
+    display: inline-block;
+    font-size: 16px;
+    margin: -15px;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+section {
+    margin: 0px 5px 5px 5px;
+    padding: 10px;
+    background-color: white;
+    color: #4c555f;
+}
+header {
+    font-family: 'Gotu', sans-serif;
+    padding: 10px;
+    text-align: center;
+    color: #184a45ff;
+}
+form {
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    text-align: center;
+} 
+label {
+    padding-right: 10px;
+} 
+.body, .workout-children {
+    font-family: 'Raleway', sans-serif;
+    padding: 0px 10px 0px 10px;
+    line-height: 1.5em;
+}
+.body p {
+    margin-bottom: 15px;
+}
+.workout-date {
+    font-family: 'Raleway', sans-serif;
+    padding: 10px 0px 0px 0px;
+    text-align: left;
+    color: lightslategray;
+
+}
+.exercise {
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+.exercise-header {
+    font-family: 'Gotu', sans-serif;
+    color: #fc766aff;
+    text-align: left;
+}
+.submit-btn {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #fc766aff;
+    color: white;
+    border: 1px solid #B0B8B4FF;
+}
+.default-hidden-bar {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    text-align: center;
+    background-color: #fc766aff;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.hidden-bar {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+.body-link {
+    color: blue;
+    text-decoration: underline;
+    padding: 15px;
+}
+.workout-children {
+    border: 1px solid #4c555f;
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.2);
+    border-radius: 25px;
+}
+.button-link {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: 15px 0px 30px 0px;
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.2);
+    color: white;
+    background-color: #fc766aff;
+    border: 1px solid #fc766aff;
+    border-radius: 20px;
+}
+.flash {
+    text-align: center;
+    color: red;
+}
+#triple-bar {
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px;
+    padding-left: 20px;
+}

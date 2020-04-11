@@ -1,0 +1,52 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - workojo</title>
+<link rel="stylesheet" media='screen and (min-width: 450px)' href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" media='screen and (min-width: 140px) and (max-width: 440px)' href="{{ url_for('static', filename='phone.css') }}"/>
+<link href="https://fonts.googleapis.com/css?family=Gotu|Raleway&display=swap" rel="stylesheet"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+<nav>
+  <h1>workojo</h1>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['username'] }}</span>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+      <li id="triple-bar">&#8801</li>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">Register</a>
+      <li><a href="{{ url_for('auth.login') }}">Log In</a>
+      <li id="triple-bar">&#8801</li>
+    {% endif %}
+  </ul>
+  {% if g.user %}
+  <div id="toggle-bar" class="default-hidden-bar">
+    <ul>
+      <li><a href="{{ url_for('log.index') }}">Home</a></li>
+      <li><a href="{{ url_for('log.create_workout') }}">New Workout</a></li>
+      <li><a href="{{ url_for('log.diet_goals') }}">Diet Goals</a></li>
+    </ul>
+  </div>
+  {% else %}
+  <div id="toggle-bar" class="default-hidden-bar">
+    <ul>
+      <li>Register/Login to view other links</li>
+    </ul>
+  </div>
+  {% endif %}
+  <script>
+    function toggleBar() {
+      document.getElementById("toggle-bar").classList.toggle("hidden-bar");
+    }
+    document.getElementById("triple-bar").addEventListener('click', toggleBar);
+  </script>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
+</body>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ exercise['exercise_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {{ form.csrf_token }}
+  {{ form.exercise_name.label }}{{ form.exercise_name }}
+  <br>
+  <br>
+  {{ form.set_number.label}}{{form.set_number}}
+  <br>
+  <br>
+  {{ form.repetitions.label}}{{form.repetitions}}
+  <br>
+  <br>
+  <select id="unit" name="unit" class="input-block">
+    <option value="{{exercise['unit']}}">{{exercise['unit']}}</option>
+    {% for o in unit_list %}
+    {% if o != exercise['unit'] %}
+    <option value="{{ o }}">{{ o }}</option>
+    {% endif %}
+    {% endfor %}
+  </select>
+  <br>
+  <br>
+  <input class="submit-btn" type="submit" value="Save">
+</form>
+<form action="{{ url_for('log.delete', id=exercise['id']) }}" method="post">
+  <input class="submit-btn" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+</form>
+{% endblock %}

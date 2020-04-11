@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="header-center">{% block title %}Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <header>
+    <h4 class="header-center"><i>{{ quote }}</i> {{ emoji }}</h4>
+  </header>
+  {% if not g.user %}
+  <p class="body">
+    This is a gym logger webapp. You must register/login to add and view your workouts. Please check our 
+    links on navigation bar.
+  </p>
+  {% else %}
+  <a class="button-link" href="{{ url_for('log.create_workout') }}">Create New Workout</a>
+  <div class="exercise-wrapper">
+  {% for workout in workouts %}
+    <div class="exercise">
+      <header>
+        <div class="exercise-card">
+          <a href="{{url_for('log.workout', id=workout['id'])}}" ><h2 class="exercise-header">{{ workout['tag'] }}</h2></a>
+          <p class="workout-date">Journal of {{ workout['created'].strftime('%a, %d %b') }}</p>
+        </div>
+      </header>
+      <br>
+    </div>
+  {% endfor %}
+  </div>
+  {% if prev_url %}
+  <a class="body-link" href="{{ prev_url }}">Newer Workouts</a>
+  {% endif %}
+  {% if next_url %}
+  <a class="body-link" href="{{ next_url }}">Older Workouts</a>
+  {% endif %}
+  {% endif %}
+{% endblock %}

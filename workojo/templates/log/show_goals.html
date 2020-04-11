@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %} Diet Goals {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <p>
+        You established these goals at {{ diet_goals['created'].strftime('%a, %d %b') }}.
+        <a class="body-link" href="{{ url_for('log.update_goals') }}">Click here to update</a>
+    </p>
+    <table>
+        <tr>
+          <th>Protein</th>
+          <th>Carbs</th>
+          <th>Fats</th>
+          <th>KCal</th>
+        </tr>
+        <tr>
+          <td>{{ diet_goals['daily_protein'] }}</td>
+          <td>{{ diet_goals['daily_carbs'] }}</td>
+          <td>{{ diet_goals['daily_fats'] }}</td>
+          <td>{{ kcal }}</td>
+        </tr>
+      </table>
+</div>
+{% endblock %}

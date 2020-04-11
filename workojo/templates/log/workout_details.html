@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %} {{ workout['tag']}} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="body">
+<h2 class="workout-header">Workout of {{ workout['created'].strftime('%a, %d %b')}}</h2>
+<h4 class="workout-header"> Strength Exercises</h4>
+{% for exercise in exercises %}
+<p class="workout-children">
+    {{ exercise['exercise_name']}} <a class="body-link" href="{{url_for('log.update', id=exercise['id'])}}">Update/Delete</a>
+    <br>
+    {{ exercise['set_number']}} for {{ exercise['repetitions']}} {{ exercise['unit']}} <br>
+</p>
+{% endfor %}
+<p><a class="body-link" href="{{url_for('log.create')}}">Add new exercise</a></p>
+{% if macros %}
+<h4 class="workout-header">Macros Intake</h4>
+<table>
+  <tr>
+    <th>Protein</th>
+    <th>Carbs</th>
+    <th>Fats</th>
+    <th>KCal</th>
+  </tr>
+  <tr>
+    <td>{{ macros['protein'] }}</td>
+    <td>{{ macros['carbs'] }}</td>
+    <td>{{ macros['fats'] }}</td>
+    <td>{{ kcal }}</td>
+  </tr>
+</table>
+<a class="body-link" href="{{url_for('log.macro_update', id=macros['id'])}}">Update Macros</a>
+{% else %}
+<a class="body-link" href="{{url_for('log.macro_create')}}">Track macros</a>
+{% endif %}
+{% if macros and diet_goals %}
+<h4 class="workout-header">Daily Intake Relative to current goals</h4>
+<table>
+  <tr>
+    <th>Protein</th>
+    <th>Carbs</th>
+    <th>Fats</th>
+  </tr>
+  <tr>
+    <td>{{ distance_list[0] }}</td>
+    <td>{{ distance_list[1] }}</td>
+    <td>{{ distance_list[2] }}</td>
+  </tr>
+</table>
+<h6 class="workout-header">Brief Explanation</h6>
+<p> 
+  Zero means that your daily intake is exactly the same as your goal intake.
+  Any positive number means a surplus in this particular nutrient.
+  Negative numbers means the opposite, that you had a deficit in this particular nutrient.
+</p>
+{% endif %}
+</div>
+{% endblock %}
+

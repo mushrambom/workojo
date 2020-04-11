@@ -1,0 +1,136 @@
+* {margin: 0; padding: 0;}
+h4 {font-size: 28px;}
+nav {
+    font-family: 'Gotu', sans-serif;
+    display: flex;
+    padding: 20px;
+    background-color: #fc766aff;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+ul {
+    margin-left: 70%;
+}
+li {
+    display: inline-block;
+    margin-left: 30px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    color: #4c555f;
+}
+header {
+    font-family: 'Gotu', sans-serif;
+    padding: 25px 0px;
+    color: #184a45ff;
+}
+/* form {
+    width: 30%;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    padding: 25px;
+} */
+label {
+    padding-right: 20px;
+}
+.default-hidden-bar {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    text-align: center;
+    background-color: #fc766aff;
+    max-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.default-hidden-bar ul {
+    margin-left: 0;
+}
+.default-hidden-bar li {
+    margin-left: 0px;
+}
+.hidden-bar {
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+.header-center {
+    text-align: center;
+}
+.workout-header {
+    padding: 15px 0px;
+}
+.workout-children {
+    border: 1px solid #4c555f;
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.2);
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+.exercise {
+    box-shadow: 2px 8px 5px 0px rgba(0,0,0,0.2);
+    margin-bottom: 35px;
+    width: 23%;
+    margin-left: 2%;
+}
+.exercise-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.body, .workout-children {
+    font-family: 'Raleway', sans-serif;
+    padding: 0px 25px;
+}
+.exercise-header {
+    text-align: center;
+    color: #fc766aff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+.workout-date {
+    padding-top: 10px;
+    text-align: center;
+}
+.button-link {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: 15px auto 30px auto;
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.2);
+    color: white;
+    background-color: #fc766aff;
+    border: 1px solid #fc766aff;
+    border-radius: 20px;
+    width: 25%;
+}
+.body-link {
+    color: blue;
+    text-decoration: underline;
+    padding-right: 15px;
+}
+.submit-btn {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #fc766aff;
+    color: white;
+    border: 1px solid #B0B8B4FF;
+}
+.form-header {
+    text-align: center;
+}
