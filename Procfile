@@ -1,1 +1,1 @@
-web: gunicorn workojo:workojo
+web: FLASK_APP=workojo flask run
