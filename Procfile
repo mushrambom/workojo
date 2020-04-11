@@ -1,1 +1,1 @@
-web: gunicorn app:workojo
+web: gunicorn workojo:app
